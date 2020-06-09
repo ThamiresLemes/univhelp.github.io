@@ -1,0 +1,69 @@
+{% INCLUDE 'overall_header.html' %}
+<h1>{{ lang('ACP_RIGHTHEADERIMAGE_CONFIG') }}</h1>
+<p>{{ lang('ACP_RIGHTHEADERIMAGE_CONFIG_EXPLAIN') }}</p>
+<form id="acp_quotes_config" method="post" action="{{ U_ACTION }}">
+	<fieldset>
+		<legend>{{ lang('ACP_RIGHTHEADERIMAGE_CONFIG_SET') }}</legend>
+		<dl>
+			<dt>
+				<label for="rightheaderimage_enable">{{ lang('RIGHTHEADERIMAGE_ENABLE') }}{{ lang('COLON') }}</label><br><span>{{ lang('RIGHTHEADERIMAGE_ENABLE_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" class="radio" name="rightheaderimage_enable" value="1"{% if RIGHTHEADERIMAGE_ENABLE %} id="rightheaderimage_enable" checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="rightheaderimage_enable" value="0"{% if not RIGHTHEADERIMAGE_ENABLE %} id="rightheaderimage_enable" checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="rightheaderimage_search">{{ lang('RIGHTHEADERIMAGE_SEARCH') }}{{ lang('COLON') }}</label><br><span>{{ lang('RIGHTHEADERIMAGE_SEARCH_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" class="radio" name="rightheaderimage_search" value="1"{% if RIGHTHEADERIMAGE_SEARCH %} id="rightheaderimage_search" checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="rightheaderimage_search" value="0"{% if not RIGHTHEADERIMAGE_SEARCH %} id="rightheaderimage_search" checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="rightheaderimage_target">{{ lang('RIGHTHEADERIMAGE_TARGET') }}{{ lang('COLON') }}</label><br><span>{{ lang('RIGHTHEADERIMAGE_TARGET_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<select name="rightheaderimage_target" id="rightheaderimage_target">
+				<option value="1"{% if RIGHTHEADERIMAGE_TARGET eq '1' %} selected="selected"{% endif %}>{{ lang('RIGHTHEADERIMAGE_TARGET_NOTHING') }}</option>
+				<option value="2"{% if RIGHTHEADERIMAGE_TARGET eq '2' %} selected="selected"{% endif %}>{{ lang('RIGHTHEADERIMAGE_TARGET_SAME') }}</option>
+				<option value="3"{% if RIGHTHEADERIMAGE_TARGET eq '3' %} selected="selected"{% endif %}>{{ lang('RIGHTHEADERIMAGE_TARGET_NEW') }}</option>
+				</select>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="rightheaderimage_image_url">{{ lang('RIGHTHEADERIMAGE_IMAGE_URL') }}{{ lang('COLON') }}</label><br><span>{{ lang('RIGHTHEADERIMAGE_IMAGE_URL_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input style="width:90%" name="rightheaderimage_image_url" type="text" id="rightheaderimage_image_url" value="{{ RIGHTHEADERIMAGE_IMAGE_URL }}"  placeholder="{{ lang('RIGHTHEADERIMAGE_IMAGE_URL_PLACEHOLDER') }}" maxlength="255" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="rightheaderimage_image_link">{{ lang('RIGHTHEADERIMAGE_IMAGE_LINK') }}{{ lang('COLON') }}</label><br><span>{{ lang('RIGHTHEADERIMAGE_IMAGE_LINK_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input style="width:90%" name="rightheaderimage_image_link" type="text" id="rightheaderimage_image_link" value="{{ RIGHTHEADERIMAGE_IMAGE_LINK }}"  placeholder="{{ lang('RIGHTHEADERIMAGE_IMAGE_LINK_PLACEHOLDER') }}" maxlength="255" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="rightheaderimage_resize">{{ lang('RIGHTHEADERIMAGE_RESIZE') }}{{ lang('COLON') }}</label><br><span>{{ lang('RIGHTHEADERIMAGE_RESIZE_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input name="rightheaderimage_resize" type="number" min="0" required  id="rightheaderimage_resize" value="{{ RIGHTHEADERIMAGE_RESIZE }}"  maxlength="255" />
+			</dd>
+		</dl>
+		<p class="submit-buttons">
+			<input type="hidden" name="action" value="save" />
+			<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{{ lang('RESET') }}" />
+			{{ S_FORM_TOKEN }}
+		</p>
+	</fieldset>
+</form>
+{% INCLUDE 'overall_footer.html' %}

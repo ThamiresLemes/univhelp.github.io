@@ -1,0 +1,9 @@
+Subject: O seu registro foi ativado
+
+Olá {USERNAME},
+
+O seu registro em "{SITENAME}" foi ativado por um administrador, agora você pode logar.
+
+A sua senha foi codificada de forma segura em nosso banco de dados e não podemos restaurá-la. Contudo, caso se esqueça da mesma, você poderá resetá-la usando o endereço de e-mail associado ao seu registro.
+
+{EMAIL_SIG}

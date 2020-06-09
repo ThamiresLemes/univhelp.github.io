@@ -1,0 +1,13 @@
+Subject: Novo usuário registrado
+
+Olá,
+
+O registro do usuário "{USERNAME}" foi desativado ou recém-criado. Você deverá verificar as informações deste usuário (caso necessário) e ativá-lo apropriadamente.
+
+Use este endereço para visualizar o perfil do usuário:
+{U_USER_DETAILS}
+
+Você pode ativar a conta imediatamente clicando neste endereço:
+{U_ACTIVATE}
+
+{EMAIL_SIG}

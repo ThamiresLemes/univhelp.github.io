@@ -1,0 +1,62 @@
+{% if loops.topicrow|length %}
+	<ul class="sm-list">
+	{% if S_CONTEXT %}
+		{% for topicrow in loops.topicrow %}
+		<li>
+			<div class="sm-inner img-align-left small-avatar">
+				<a href="{{ topicrow.U_VIEWPROFILE }}" class="img-ui">{{ topicrow.AVATAR }}</a>
+				<div class="sm-fill-space">
+					<p class="topic-title"><a href="{{ topicrow.U_VIEWTOPIC }}">{{ topicrow.TOPIC_TITLE }}</a></p>
+					<div class="author">
+					{% if not S_IS_BOT %}
+						{% if topicrow.S_UNREAD_TOPIC %}
+						<a class="unread" href="{{ topicrow.U_NEW_POST }}" title="{{ lang('NEW_POST') }}">
+							<i class="icon fa-file fa-fw icon-red icon-md" aria-hidden="true"></i><span class="sr-only">{{ lang('NEW_POST') }}</span>
+						</a>
+						{% else %}
+						<a href="{{ topicrow.U_LAST_POST }}" title="{{ lang('GOTO_LAST_POST') }}">
+							<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">{{ lang('GOTO_LAST_POST') }}</span>
+						</a>
+						{% endif %}
+					{% endif %}
+						{% if topicrow.ATTACH_ICON_IMG %}<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>{% endif %}
+						{{ lang('POST_BY_AUTHOR') }} {{ topicrow.USERNAME }} {{ lang('POSTED_ON_DATE') }} {{ topicrow.TOPIC_POST_TIME }} {{ lang('IN') }} <a href="{{ topicrow.U_VIEWFORUM }}">{{ topicrow.FORUM_TITLE }}</a>
+					</div>
+				</div>
+				<br />
+				<p class="gensmall">{{ topicrow.TOPIC_PREVIEW }}</p>
+			</div>
+		</li>
+		{% endfor %}
+	{% elseif S_MINI %}
+		{% for topicrow in loops.topicrow %}
+		<li title="{{ topicrow.TOPIC_PREVIEW }}">
+			<div class="sm-inner img-align-left small-avatar">
+				<a href="{{ topicrow.U_VIEWPROFILE }}" class="img-ui">{{ topicrow.AVATAR }}</a>
+				<div class="sm-fill-space">
+					<p class="topic-title"><a href="{{ topicrow.U_VIEWTOPIC }}">{{ topicrow.TOPIC_TITLE }}</a></p><br /><br />
+					<p class="small"><i class="fa fa-clock-o"></i>{{ topicrow.TOPIC_POST_TIME|date("M d, Y") }}</p>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	{% else %}
+		{% for topicrow in loops.topicrow %}
+		<li>
+		{% if not S_IS_BOT %}
+			{% if topicrow.S_UNREAD_TOPIC %}
+			<a class="unread" href="{{ topicrow.U_NEW_POST }}" title="{{ lang('NEW_POST') }}">
+				<i class="icon fa-file fa-fw icon-red icon-md" aria-hidden="true"></i><span class="sr-only">{{ lang('NEW_POST') }}</span>
+			</a>
+			{% else %}
+			<a href="{{ topicrow.U_LAST_POST }}" title="{{ lang('GOTO_LAST_POST') }}">
+				<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">{{ lang('GOTO_LAST_POST') }}</span>
+			</a>
+			{% endif %}
+		{% endif %}
+			<a href="{{ topicrow.U_VIEWTOPIC }}" title="{{ topicrow.TOPIC_PREVIEW }}">{{ topicrow.TOPIC_TITLE }}</a>
+		</li>
+		{% endfor %}
+	{% endif %}
+	</ul>
+{% endif %}

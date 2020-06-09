@@ -1,0 +1,20 @@
+Subject: Notificação de resposta ao tópico - "{TOPIC_TITLE}"
+
+Olá {USERNAME},
+
+Você recebeu este e-mail porque está acompanhando o tópico "{TOPIC_TITLE}" em "{SITENAME}". Este tópico recebeu uma resposta. Você pode usar o seguinte endereço para ler as respostas escritas. Não serão enviadas mais notificações enquanto você não visitar este tópico.
+
+Se você deseja visualizar a mensagem mais recente desde sua última visita, clique no seguinte link:
+{U_NEWEST_POST}
+
+Se você deseja visualizar o tópico, clique no seguinte link:
+{U_TOPIC}
+
+Se você deseja visualizar o fórum, clique no seguinte link:
+{U_FORUM}
+
+Se você deseja parar de receber notificações relativas aos tópicos favoritos, por favor atualize suas configurações de notificação aqui:
+
+{U_NOTIFICATION_SETTINGS}
+
+{EMAIL_SIG}

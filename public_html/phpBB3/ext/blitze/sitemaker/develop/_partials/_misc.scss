@@ -1,0 +1,104 @@
+@import "globals";
+
+.fa {
+	margin-right: 3px;
+}
+
+.edit-mode-btn {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	padding: 12px 15px;
+	font-size: 18px;
+	border-radius: 100%;
+	opacity: 0.8;
+	z-index: 1000;
+
+	&:hover {
+		opacity: 0.6;
+		transform: rotate(15deg);
+	}
+
+	@media screen and (max-width : 940px) {
+		padding: 7px 10px;
+	}
+}
+
+/* Misc */
+.field-label {
+	font-weight: bold;
+	margin-top: 1rem;
+}
+
+.label-hidden {
+	display: none;
+
+	.content &,
+	.sm-content-footer & {
+		display: block;
+		visibility: hidden;
+		height: 0;
+	}
+}
+
+.label-inline {
+	display: inline;
+
+	.content & {
+		line-height: 1rem;
+
+		&:before {
+			content: ' ';
+			display: block;
+	    	white-space: pre;
+		}
+	}
+}
+
+.label-newline {
+	display: block;
+}
+
+.topic-title {
+	float: none;
+	display: inline;
+}
+
+.sm-postbody {
+	width: 100%;
+}
+
+.sm-fill-space {
+	overflow: hidden;
+}
+
+.sm-content-footer {
+	margin-top: 1em;
+}
+
+/* text alignment */
+.align-right {
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+@media screen and (max-width : $toast-breakpoint-medium) {
+	.sm-responsive-show {
+		display: block;
+	}
+
+	.sm-responsive-hide {
+		display: none;
+	}
+
+	.sm-responsive-full-width {
+		width: 100%;
+	}
+}

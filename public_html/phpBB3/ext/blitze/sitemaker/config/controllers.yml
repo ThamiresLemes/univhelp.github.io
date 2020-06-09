@@ -1,0 +1,38 @@
+services:
+
+    blitze.sitemaker.blocks.admin.controller:
+        class: blitze\sitemaker\controller\blocks_admin
+        arguments:
+            - '@auth'
+            - '@request'
+            - '@language'
+            - '@blitze.sitemaker.auto_lang'
+            - '@blitze.sitemaker.blocks.action_handler'
+
+    blitze.sitemaker.forum.controller:
+        class: blitze\sitemaker\controller\forum
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@language'
+            - '@user'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.menus.admin.controller:
+        class: blitze\sitemaker\controller\menus_admin
+        arguments:
+            - '@auth'
+            - '@request'
+            - '@language'
+            - '@blitze.sitemaker.menus.action_handler'
+
+    blitze.sitemaker.upload.controller:
+        class: blitze\sitemaker\controller\upload
+        arguments:
+            - '@auth'
+            - '@files.factory'
+            - '@language'
+            - '@blitze.sitemaker.filemanager.setup'

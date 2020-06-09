@@ -1,0 +1,9 @@
+{% if RIGHTHEADERIMAGE_ENABLE %}
+{% INCLUDECSS '@hifikabin_rightheaderimage/rightheaderimage.css' %}
+{% if RIGHTHEADERIMAGE_TARGET eq 1%}
+{% INCLUDEJS '@hifikabin_rightheaderimage/js/nolink.js' %}
+{% endif %}
+{% if RIGHTHEADERIMAGE_TARGET eq 3%}
+{% INCLUDEJS '@hifikabin_rightheaderimage/js/newtab.js' %}
+{% endif %}
+{% endif %}

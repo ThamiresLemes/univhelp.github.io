@@ -1,0 +1,34 @@
+.headerbar #search-box {
+	display: none !important;
+}
+.header_image{
+	width:100%;
+	max-width:200px;
+}
+.headerbar #header-image {
+	float: right;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	max-width:100%;
+	max-height:100%;
+}
+.rtl .headerbar #header-image {
+	float: left;
+	margin-left: 5px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	max-width:100%;
+	max-height:100%;
+}
+.navbar #search-box{
+	box-shadow:none;
+}
+.navbar #search-icon {
+	border-radius: 0px 4px 4px 0px;
+}
+.rtl .navbar #search-icon {
+	border-radius: 4px 0px 0px 4px;
+}

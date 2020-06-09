@@ -1,0 +1,30 @@
+{% if loops.tree|length %}
+<nav>
+	<ul class="sm-list fa-ul">
+	{% for tree in loops.tree %}
+		{% if tree.THIS_DEPTH > tree.PREV_DEPTH %}
+			<ul class="sm-list fa-ul">
+		{% else %}
+		{% for close in tree.close %}
+			</ul>
+		</li>
+		{% endfor %}
+		{% endif %}
+		{% if tree.ITEM_URL %}
+		<li{% if tree.IS_CURRENT %} class="active"{% endif %}>
+			<a href="{{ tree.FULL_URL }}"{% if tree.ITEM_TARGET %} target="_blank" rel="noopener" rel="noreferrer"{% endif %}><i class="{{ tree.ITEM_ICON }}fa-fw" aria-hidden="true"></i>{{ tree.ITEM_TITLE }}</a>
+		{% else %}
+		<li class="nav-header">
+			{% if tree.ITEM_TITLE !== '-' %}<i class="{{ tree.ITEM_ICON }}fa-fw" aria-hidden="true"></i>{{ tree.ITEM_TITLE }}{% else %}<hr />{% endif %}
+		{% endif %}
+		{% if tree.NUM_KIDS == 0 %}
+		</li>
+		{% endif %}
+	{% endfor %}
+	    {% for close_tree in loops.close_tree %}
+	    	</ul>
+	    </li>
+	    {% endfor %}
+	</ul>
+</nav>
+{% endif %}

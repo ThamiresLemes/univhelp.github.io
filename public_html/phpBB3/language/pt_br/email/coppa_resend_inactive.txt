@@ -1,0 +1,42 @@
+Subject: Bem-vindo ao fórum "{SITENAME}"
+
+{WELCOME_MSG}
+
+De acordo com a COPPA, o seu registro encontra-se presentemente inativo.
+
+Por favor, imprima esta mensagem e peça aos seus pais ou responsáveis que a assine e coloque a data. Em seguida, esta mensagem deverá ser enviada por fax para:
+
+{FAX_INFO}
+
+Ou por correio para:
+
+{MAIL_INFO}
+
+------------------------------ RECORTE AQUI ------------------------------
+PERMISSÃO PARA PARTICIPAR EM "{SITENAME}" - {U_BOARD}
+
+Usuário: {USERNAME}
+E-mail: {EMAIL_ADDRESS}
+
+EU REVI A INFORMAÇÃO FORNECIDA PELA MINHA CRIANÇA E COMO TAL DOU PERMISSÃO A "{SITENAME}" PARA SALVAR ESTA INFORMAÇÃO. 
+EU ENTENDO QUE ESTA INFORMAÇÃO POSSA SER MUDADA A QUALQUER MOMENTO DESDE QUE SE USE A RESPECTIVA SENHA. 
+EU ENTENDO QUE SE POSSA SOLICITAR QUE ESTA INFORMAÇÃO SEJA RETIRADA DE "{SITENAME}" A QUALQUER MOMENTO.
+
+
+Pais ou responsáveis 
+(imprima o seu nome aqui): _____________________
+
+(assine aqui): __________________ 
+
+Data: _______________
+
+------------------------------ RECORTE AQUI ------------------------------
+
+
+Assim que o administrador receber as informações acima apresentadas via fax ou correio normal, o seu registro será ativado.
+
+A sua senha foi codificada de forma segura em nosso banco de dados e não podemos restaurá-la. Contudo, caso se esqueça da mesma, você poderá resetá-la usando o endereço de e-mail associado ao seu registro.
+
+Obrigado por registrar-se!
+
+{EMAIL_SIG}

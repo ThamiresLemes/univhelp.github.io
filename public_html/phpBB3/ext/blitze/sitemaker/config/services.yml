@@ -1,0 +1,293 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: blocks.yml }
+    - { resource: controllers.yml }
+    - { resource: listeners.yml }
+
+services:
+
+    blitze.sitemaker.auto_lang:
+        class: blitze\sitemaker\services\auto_lang
+        arguments:
+            - '@config'
+            - '@ext.manager'
+            - '@language'
+            - '@user'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.blocks:
+        class: blitze\sitemaker\services\blocks\blocks
+        arguments:
+            - '@cache.driver'
+            - '@config'
+            - '@dispatcher'
+            - '@template'
+            - '@language'
+            - '@blitze.sitemaker.blocks.factory'
+            - '@blitze.sitemaker.groups'
+            - '@blitze.sitemaker.mapper.factory'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.blocks.action_handler:
+        class: blitze\sitemaker\services\blocks\action_handler
+        arguments:
+            - '@config'
+            - '@service_container'
+            - '@request'
+            - '@language'
+            - '@blitze.sitemaker.blocks'
+            - '@blitze.sitemaker.blocks.factory'
+            - '@blitze.sitemaker.mapper.factory'
+
+    blitze.sitemaker.blocks.admin_bar:
+        class: blitze\sitemaker\services\blocks\admin_bar
+        arguments:
+            - '@config'
+            - '@controller.helper'
+            - '@service_container'
+            - '@dispatcher'
+            - '@template'
+            - '@language'
+            - '@user'
+            - '@blitze.sitemaker.filemanager.setup'
+            - '@blitze.sitemaker.icon_picker'
+            - '@blitze.sitemaker.util'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.blocks.cfg_handler:
+        class: blitze\sitemaker\services\blocks\cfg_handler
+        arguments:
+            - '@request'
+            - '@template'
+            - '@language'
+            - '@blitze.sitemaker.groups'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.blocks.display:
+        class: blitze\sitemaker\services\blocks\display
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@config_text'
+            - '@service_container'
+            - '@request'
+            - '@template'
+            - '@user'
+
+    blitze.sitemaker.block_collection:
+        class: phpbb\di\service_collection
+        arguments:
+            - '@service_container'
+        tags:
+            - { name: service_collection, tag: sitemaker.block }
+
+    blitze.sitemaker.blocks.factory:
+        class: blitze\sitemaker\services\blocks\factory
+        arguments:
+            - '@language'
+            - '@blitze.sitemaker.template'
+            - '@blitze.sitemaker.block_collection'
+
+    blitze.sitemaker.blocks.manager:
+        class: blitze\sitemaker\services\blocks\manager
+        arguments:
+            - '@cache.driver'
+            - '@blitze.sitemaker.blocks.factory'
+            - '@blitze.sitemaker.mapper.factory'
+
+    blitze.sitemaker.cron.blocks_cleanup:
+        class: blitze\sitemaker\cron\blocks_cleanup
+        arguments:
+            - '@config'
+            - '@dbal.conn'
+            - '@blitze.sitemaker.blocks.manager'
+            - '@blitze.sitemaker.url_checker'
+            - '%tables.sitemaker.blocks%'
+            - '%tables.sitemaker.cblocks%'
+        calls:
+            - [set_name, [blitze.sitemaker.cron.blocks_cleanup]]
+        tags:
+            - { name: cron.task }
+
+    blitze.sitemaker.date_range:
+        class: blitze\sitemaker\services\date_range
+        arguments:
+            - '@user'
+
+    blitze.sitemaker.filemanager.settings:
+        class: blitze\sitemaker\services\filemanager\settings
+        arguments:
+            - '@filesystem'
+            - '%filemanager.config_path%'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.filemanager.setup:
+        class: blitze\sitemaker\services\filemanager\setup
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@filesystem'
+            - '@user'
+            - '%filemanager.config_path%'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.forum.data:
+        class: blitze\sitemaker\services\forum\data
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@content.visibility'
+            - '@dbal.conn'
+            - '@user'
+            - '@blitze.sitemaker.users.data'
+            - '%sitemaker.cache_time%'
+
+    blitze.sitemaker.forum.manager:
+        class: blitze\sitemaker\services\forum\manager
+        arguments:
+            - '@auth'
+            - '@cache.driver'
+            - '@config'
+            - '@dbal.conn'
+            - '@language'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.forum.options:
+        class: blitze\sitemaker\services\forum\options
+        arguments:
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.groups:
+        class: blitze\sitemaker\services\groups
+        arguments:
+            - '@dbal.conn'
+            - '@language'
+            - '@user'
+
+    blitze.sitemaker.icon_picker:
+        class: blitze\sitemaker\services\icon_picker
+        arguments:
+            - '@language'
+            - '@blitze.sitemaker.util'
+            - '@blitze.sitemaker.template'
+
+    blitze.sitemaker.mapper.factory:
+        class: blitze\sitemaker\model\mapper_factory
+        arguments:
+            - '@config'
+            - '@dbal.conn'
+            - mappers:
+                blocks: '%tables.sitemaker.blocks%'
+                routes: '%tables.sitemaker.block_routes%'
+                menus: '%tables.sitemaker.menus%'
+                items: '%tables.sitemaker.menu_items%'
+
+    blitze.sitemaker.members:
+        class: blitze\sitemaker\services\members
+        arguments:
+            - '@dbal.conn'
+            - '@language'
+            - '@user'
+            - '@blitze.sitemaker.date_range'
+            - '@blitze.sitemaker.template'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.menus.action_handler:
+        class: blitze\sitemaker\services\menus\action_handler
+        arguments:
+            - '@cache.driver'
+            - '@request'
+            - '@language'
+            - '@blitze.sitemaker.mapper.factory'
+
+    blitze.sitemaker.menus.display:
+        class: blitze\sitemaker\services\menus\display
+        shared: false
+        arguments:
+            - '@dbal.conn'
+            - '@user'
+            - '%tables.sitemaker.menu_items%'
+            - 'item_id'
+
+    blitze.sitemaker.menus.navigation:
+        class: blitze\sitemaker\services\menus\navigation
+        arguments:
+            - '@cache.driver'
+            - '@blitze.sitemaker.mapper.factory'
+            - '@blitze.sitemaker.menus.display'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.poll:
+        class: blitze\sitemaker\services\poll
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@dbal.conn'
+            - '@request'
+            - '@language'
+            - '@user'
+            - '@blitze.sitemaker.util'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.template:
+        class: blitze\sitemaker\services\template
+        arguments:
+            - '@path_helper'
+            - '@config'
+            - '@blitze.sitemaker.template_context'
+            - '@blitze.sitemaker.template.twig.environment'
+            - '%core.template.cache_path%'
+            - '@user'
+            - '@template.twig.extensions.collection'
+            - '@ext.manager'
+
+    blitze.sitemaker.template_context:
+        class: phpbb\template\context
+
+    blitze.sitemaker.template.twig.environment:
+        class: phpbb\template\twig\environment
+        arguments:
+            - '@config'
+            - '@filesystem'
+            - '@path_helper'
+            - '%core.template.cache_path%'
+            - '@ext.manager'
+            - '@blitze.sitemaker.template.twig.loader'
+            - '@dispatcher'
+            - []
+        calls:
+            - [setLexer, ['@template.twig.lexer']]
+
+    blitze.sitemaker.template.twig.loader:
+        class: phpbb\template\twig\loader
+        arguments:
+            - '@filesystem'
+
+    blitze.sitemaker.url_checker:
+        class: blitze\sitemaker\services\url_checker
+
+    blitze.sitemaker.users.data:
+        class: blitze\sitemaker\services\users\data
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@dbal.conn'
+            - '@profilefields.manager'
+            - '@language'
+            - '@user'
+            - '@blitze.sitemaker.util'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+
+    blitze.sitemaker.util:
+        class: blitze\sitemaker\services\util
+        arguments:
+            - '@path_helper'
+            - '@template'
+            - '@user'

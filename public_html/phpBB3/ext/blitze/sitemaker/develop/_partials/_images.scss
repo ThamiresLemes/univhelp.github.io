@@ -1,0 +1,105 @@
+@import "globals";
+
+/* Avatar sizes */
+img {
+	max-width: 100%;
+	height: auto;
+
+	@mixin set-avatar-size($size, $valign) {
+		vertical-align: $valign;
+		max-width: $size;
+		width: auto;
+		width: $size;
+		max-height: $size;
+		height: auto;
+		height: $size;
+	}
+
+	.tiny-avatar & {
+		@include set-avatar-size($tiny-avatar-size, middle);
+	}
+
+	.small-avatar & {
+		@include set-avatar-size($small-avatar-size, top);
+	}
+
+	.medium-avatar & {
+		@include set-avatar-size($medium-avatar-size, top);
+	}
+
+	.post &,
+	.attach-image & {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.feeds & {
+		max-width: 100%;
+		margin: 0 0.25rem;
+	}
+}
+
+/* Block images */
+.img-ui, .attach-image {
+	display: block;
+	margin: 0 0 0.25rem 0;
+
+	.small-img & img {
+		width: $small-image-size;
+	}
+
+	.medium-img & img {
+		width: $medium-image-size;
+	}
+
+	.large-img & img {
+		width: $large-image-size;
+	}
+
+	.fullwidth-img & img {
+		width: 100%;
+	}
+
+	.card-img & {
+		margin: -4px -9px auto -9px;
+
+		img {
+			padding: 0;
+			width: 100%;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+
+		.content & {
+			margin: 0;
+
+			img {
+				border-radius: 0;
+			}
+		}
+	}
+
+	.img-align-left & img {
+		float: left;
+		margin: 0.7rem 1rem 0 0;
+	}
+
+	.img-align-right & img {
+		float: right;
+		margin: 0.7rem 0 0 1rem;
+	}
+
+	.img-border & img,
+	.img-border-padding & img {
+		border: 1px solid $border-color;
+	}
+
+	.img-border-padding & img {
+		padding: 4px;
+	}
+
+	.img-circle & img {
+		border-radius: 50%;
+		overflow: hidden;
+	}
+}

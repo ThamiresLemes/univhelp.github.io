@@ -1,0 +1,9 @@
+{% if loops.topicrow|length %}
+<ul class="sm-list">
+	{% for topicrow in loops.topicrow %}
+	<li><a href="{{ topicrow.U_VIEWTOPIC }}">{{ topicrow.TOPIC_TITLE }}</a></li>
+	{% endfor %}
+</ul>
+{% else %}
+	<p>{{ NO_RECORDS }}</p>
+{% endif %}

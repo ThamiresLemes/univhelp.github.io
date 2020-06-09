@@ -1,0 +1,13 @@
+Subject: Mensagem denunciada - "{TOPIC_TITLE}"
+
+Olá {USERNAME},
+
+Você recebeu este e-mail porque a mensagem "{POST_SUBJECT}" em "{SITENAME}" foi denunciada.
+
+Se você deseja visualizar o relatório, clique no seguinte link:
+{U_VIEW_REPORT}
+
+Se você deseja visualizar a mensagem, clique no seguinte link:
+{U_VIEW_POST}
+
+{EMAIL_SIG}

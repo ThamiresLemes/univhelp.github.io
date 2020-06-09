@@ -1,0 +1,11 @@
+Subject: Bem-vindo ao grupo de usuários
+
+Parabéns,
+
+Você foi adicionado ao grupo "{GROUP_NAME}" em "{SITENAME}".
+Este passo foi dado pelo líder do grupo ou pelo administrador do fórum. Contate-os para mais informações.
+
+Você pode ver as informações de seu grupo aqui:
+{U_GROUP}
+
+{EMAIL_SIG}

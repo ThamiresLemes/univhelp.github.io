@@ -1,0 +1,5 @@
+{% if RIGHTHEADERIMAGE_ENABLE %}
+<div id="header-image" class="search-box rightside responsive-hide">
+	<a href="{{ RIGHTHEADERIMAGE_IMAGE_LINK }}"><img style="border:none; max-width:{{ RIGHTHEADERIMAGE_RESIZE }}px" src="{{ RIGHTHEADERIMAGE_IMAGE_URL }}" class="header_image" alt="{{ lang('IMAGE') }}"></a>
+</div>
+{% endif %}

@@ -1,0 +1,8 @@
+services:
+    hifikabin.rightheaderimage.listener:
+        class: hifikabin\rightheaderimage\event\listener
+        arguments:
+            - '@template'
+            - '@config'
+        tags:
+            - { name: event.listener }

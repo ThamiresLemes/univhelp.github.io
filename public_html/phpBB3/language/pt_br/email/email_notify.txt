@@ -1,0 +1,17 @@
+Subject: "{SITENAME}" - E-mail de um amigo
+
+Olá {TO_USERNAME},
+
+Esta mensagem foi enviada de "{SITENAME}" por {FROM_USERNAME} que se apresentou interessado no seguinte tópico:
+
+{TOPIC_NAME}
+
+Você pode acessá-lo no seguinte endereço:
+
+{U_TOPIC}
+
+A mensagem de {FROM_USERNAME} está incluída abaixo. Por favor, note que esta mensagem não foi revisada nem aprovada pelos administradores. Se esta mensagem contém material abusivo, spam, ou comentários que você ache ofensivos, por favor, contate o webmaster do fórum pelo seguinte endereço: {BOARD_CONTACT}. Por favor, inclua este e-mail completo, particularmente os cabeçalhos.
+
+----------
+
+{MESSAGE}

@@ -1,0 +1,13 @@
+<div class="panel post sm-block-container{{ block.class }} sm-block-spacing"{{ block.css_style }}>
+	<div class="inner">
+		{% if block.title and not block.hide_title %}
+		<h2>
+			<span class="block-icon"><i class="{{ block.icon }}" aria-hidden="true"></i></span>
+			<span class="block-title{{ editable }}">{{ block.title }}</span>
+		</h2>
+		{% endif %}
+		<div class="sm-block-content">
+			{{ block.content }}
+		</div>
+	</div>
+</div>

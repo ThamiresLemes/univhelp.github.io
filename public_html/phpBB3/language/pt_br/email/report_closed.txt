@@ -1,0 +1,7 @@
+Subject: Denúncia trancada - "{POST_SUBJECT}"
+
+Olá {USERNAME},
+
+Você recebeu esta notificação porque a sua denúncia feita acerca da mensagem "{POST_SUBJECT}" no tópico "{TOPIC_TITLE}" em "{SITENAME}" foi manuseada por um moderador ou administrador e trancada em seguida. Se você tem mais perguntas a respeito, contate o usuário {CLOSER_NAME} com uma mensagem privada.
+
+{EMAIL_SIG}

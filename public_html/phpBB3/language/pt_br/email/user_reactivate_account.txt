@@ -1,0 +1,18 @@
+Subject: Reativação de registro em "{SITENAME}"
+
+O administrador do fórum solicita a você que reative o seu registro. O seu registro encontra-se atualmente inativo.
+Por favor, siga estritamente às instruções para reativar a sua conta.
+
+É recomendável que este e-mail seja salvo para consultas posteriores. As informações de seu registro são as seguintes:
+
+----------------------------
+Usuário: {USERNAME}
+----------------------------
+
+A sua senha foi codificada de forma segura em nosso banco de dados e não podemos restaurá-la. Contudo, caso se esqueça da mesma, você poderá resetá-la usando o endereço de e-mail associado ao seu registro.
+
+Por favor, visite o seguinte endereço para reativar o seu registro:
+
+{U_ACTIVATE}
+
+{EMAIL_SIG}

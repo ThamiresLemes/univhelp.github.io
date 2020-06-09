@@ -1,0 +1,13 @@
+Subject: Notificação de moderação em tópico - "{TOPIC_TITLE}"
+
+Olá {USERNAME},
+
+Você recebeu este e-mail porque o tópico "{TOPIC_TITLE}" em "{SITENAME}" está aguardando aprovação.
+
+Se você deseja visualizar o tópico, clique no seguinte link:
+{U_VIEW_TOPIC}
+
+Se você deseja visualizar o fórum, clique no seguinte link:
+{U_FORUM}
+
+{EMAIL_SIG}

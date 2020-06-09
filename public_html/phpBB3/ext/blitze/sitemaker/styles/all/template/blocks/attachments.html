@@ -1,0 +1,15 @@
+<ul class="sm-list">
+{% for postrow in loops.postrow %}
+	{% for attachment in postrow.attachment %}
+	<li>
+		<div class="sm-inner">
+		{% if attachment.EXTENSION_GROUP == 'IMAGES' %}
+			<a href="{{ attachment.U_VIEWTOPIC }}" class="small">{{ attachment.DISPLAY_ATTACHMENT }}</a>
+		{% else %}
+			{{ attachment.DISPLAY_ATTACHMENT }}
+		{% endif %}
+		</div>
+	</li>
+	{% endfor %}
+{% endfor %}
+</ul>

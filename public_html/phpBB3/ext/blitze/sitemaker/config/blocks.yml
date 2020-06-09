@@ -1,0 +1,213 @@
+services:
+
+    blitze.sitemaker.block.attachments:
+        class: blitze\sitemaker\blocks\attachments
+        arguments:
+            - '@auth'
+            - '@cache'
+            - '@blitze.sitemaker.date_range'
+            - '@blitze.sitemaker.forum.data'
+            - '@blitze.sitemaker.forum.options'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.attachments]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.birthday:
+        class: blitze\sitemaker\blocks\birthday
+        arguments:
+            - '@cache.driver'
+            - '@dbal.conn'
+            - '@template'
+            - '@user'
+        calls:
+            - [set_name, [blitze.sitemaker.block.birthday]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.custom:
+        class: blitze\sitemaker\blocks\custom
+        arguments:
+            - '@cache.driver'
+            - '@dbal.conn'
+            - '@request'
+            - '%tables.sitemaker.cblocks%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.custom]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.featured_member:
+        class: blitze\sitemaker\blocks\featured_member
+        arguments:
+            - '@cache.driver'
+            - '@dbal.conn'
+            - '@language'
+            - '@blitze.sitemaker.users.data'
+            - '%tables.sitemaker.blocks%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.featured_member]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.forum_poll:
+        class: blitze\sitemaker\blocks\forum_poll
+        arguments:
+            - '@dbal.conn'
+            - '@blitze.sitemaker.forum.data'
+            - '@blitze.sitemaker.forum.options'
+            - '@blitze.sitemaker.groups'
+            - '@blitze.sitemaker.poll'
+        calls:
+            - [set_name, [blitze.sitemaker.block.forum_poll]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.forum_topics:
+        class: blitze\sitemaker\blocks\forum_topics
+        arguments:
+            - '@auth'
+            - '@content.visibility'
+            - '@language'
+            - '@user'
+            - '@blitze.sitemaker.date_range'
+            - '@blitze.sitemaker.forum.data'
+            - '@blitze.sitemaker.forum.options'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.forum_topics]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.links:
+        class: blitze\sitemaker\blocks\links
+        arguments:
+            - '@language'
+            - '@blitze.sitemaker.menus.navigation'
+        calls:
+            - [set_name, [blitze.sitemaker.block.links]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.login:
+        class: blitze\sitemaker\blocks\login
+        arguments:
+            - '@service_container'
+            - '@template'
+            - '@user'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.login]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.blocks.members:
+        class: blitze\sitemaker\blocks\members
+        arguments:
+            - '@language'
+            - '@user'
+            - '@blitze.sitemaker.members'
+        calls:
+            - [set_name, [blitze.sitemaker.block.members]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.member_menu:
+        class: blitze\sitemaker\blocks\member_menu
+        arguments:
+            - '@auth'
+            - '@user'
+            - '@blitze.sitemaker.forum.data'
+            - '@blitze.sitemaker.util'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.member_menu]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.menu:
+        class: blitze\sitemaker\blocks\menu
+        parent: blitze.sitemaker.block.links
+        calls:
+            - [set_name, [blitze.sitemaker.block.menu]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.mybookmarks:
+        class: blitze\sitemaker\blocks\mybookmarks
+        arguments:
+            - '@language'
+            - '@user'
+            - '@blitze.sitemaker.forum.data'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.mybookmarks]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.stats:
+        class: blitze\sitemaker\blocks\stats
+        arguments:
+            - '@config'
+            - '@template'
+            - '@language'
+        calls:
+            - [set_name, [blitze.sitemaker.block.stats]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.style_switcher:
+        class: blitze\sitemaker\blocks\style_switcher
+        arguments:
+            - '@blitze.sitemaker.blocks.display'
+        calls:
+            - [set_name, [blitze.sitemaker.block.style_switcher]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.whats_new:
+        class: blitze\sitemaker\blocks\whats_new
+        arguments:
+            - '@language'
+            - '@user'
+            - '@blitze.sitemaker.forum.data'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.whats_new]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.whois:
+        class: blitze\sitemaker\blocks\whois
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@language'
+            - '@template'
+            - '@user'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.whois]]
+        tags:
+            - { name: sitemaker.block }
+
+    blitze.sitemaker.block.wordgraph:
+        class: blitze\sitemaker\blocks\wordgraph
+        arguments:
+            - '@dbal.conn'
+            - '@blitze.sitemaker.forum.data'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+            - '%sitemaker.cache_time%'
+        calls:
+            - [set_name, [blitze.sitemaker.block.wordgraph]]
+        tags:
+            - { name: sitemaker.block }

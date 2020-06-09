@@ -1,0 +1,13 @@
+Subject: Notificação de novo tópico - "{FORUM_NAME}"
+
+Olá {USERNAME},
+
+Você recebeu este e-mail porque está visualizando o fórum "{FORUM_NAME}" em "{SITENAME}". Este fórum recebeu um tópico novo<!-- IF AUTHOR_NAME != '' --> por {AUTHOR_NAME}<!-- ENDIF --> desde a sua última visita, nomeado "{TOPIC_TITLE}". Você pode usar o seguinte endereço para ver o fórum, não serão enviadas mais notificações enquanto você não visitar este fórum.
+
+{U_FORUM}
+
+Se você deseja parar de visualizar este fórum, clique no link "Parar de visualizar este fórum" no fórum citado, ou clique no seguinte endereço:
+
+{U_STOP_WATCHING_FORUM}
+
+{EMAIL_SIG}

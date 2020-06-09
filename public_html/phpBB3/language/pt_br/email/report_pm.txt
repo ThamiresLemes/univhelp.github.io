@@ -1,0 +1,10 @@
+Subject: Mensagem privada denunciada - "{SUBJECT}"
+
+Olá {USERNAME},
+
+Você recebeu este e-mail porque a mensagem privada intitulada "{SUBJECT}" de "{AUTHOR_NAME}" em "{SITENAME}" foi denunciada.
+
+Se você deseja visualizar o relatório, clique no seguinte link:
+{U_VIEW_REPORT}
+
+{EMAIL_SIG}

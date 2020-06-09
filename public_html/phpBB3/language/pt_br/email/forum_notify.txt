@@ -1,0 +1,20 @@
+Subject: Notificação de resposta ao fórum - "{FORUM_NAME}"
+List-Unsubscribe: <{U_STOP_WATCHING_FORUM}>
+
+Olá {USERNAME},
+
+Você recebeu este e-mail porque está visualizando o fórum "{FORUM_NAME}" em "{SITENAME}". Este fórum recebeu uma mensagem nova no tópico "{TOPIC_TITLE}"<!-- IF AUTHOR_NAME != '' --> por {AUTHOR_NAME}<!-- ENDIF --> desde a sua última visita. Você pode usar o seguinte endereço para visualizar a última mensagem não lida ao fórum. Não serão enviadas mais notificações enquanto você não visitar o tópico.
+
+{U_NEWEST_POST}
+
+Se você deseja visualizar o tópico, clique no seguinte link:
+{U_TOPIC}
+
+Se você deseja visualizar o fórum, clique no seguinte link:
+{U_FORUM}
+
+Se você deseja parar de visualizar este fórum, clique no link "Parar de visualizar este fórum" encontrado na parte superior do fórum citado, ou clique no seguinte endereço:
+
+{U_STOP_WATCHING_FORUM}
+
+{EMAIL_SIG}

@@ -1,0 +1,13 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:			Revolution
+	Based on style:		prosilver (the default phpBB 3.2.x style)
+	Original author:	Tom Beddard ( http://www.subblue.com/ )
+	Modified by:		Semi_Deus ( https://www.phpbb.com/customise/db/style/revolution/ )
+    --------------------------------------------------------------
+*/
+
+@import url("common.css?v=3.2");
+@import url("forms.css?v=3.2");
+@import url("colours.css?v=3.2");
+@import url("responsive.css?v=3.2");

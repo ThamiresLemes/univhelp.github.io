@@ -1,0 +1,19 @@
+Subject: Bem-vindo ao fórum "{SITENAME}"
+
+{WELCOME_MSG}
+
+Por favor, salve este e-mail para consultas posteriores. As informações de seu registro são as seguintes:
+
+----------------------------
+Usuário: {USERNAME}
+----------------------------
+
+A sua senha foi codificada de forma segura em nosso banco de dados e não podemos restaurá-la. Contudo, caso se esqueça da mesma, você poderá resetá-la usando o endereço de e-mail associado ao seu registro.
+
+Por favor, visite o seguinte endereço para ativar o seu registro:
+
+{U_ACTIVATE}
+
+Obrigado por registrar-se!
+
+{EMAIL_SIG}

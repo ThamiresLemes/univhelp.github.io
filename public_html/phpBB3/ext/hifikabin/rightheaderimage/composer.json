@@ -1,0 +1,33 @@
+{
+    "name": "hifikabin/rightheaderimage",
+    "type": "phpbb-extension",
+    "description": "Adds second clickable image to the right hand side of your header bar. NOTE This extension is for phpBB3.2.x ONLY",
+    "homepage": "https://phpbb.hifikabin.me.uk",
+    "version": "3.2.2",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "James Newcombe",
+            "username": "hifikabin",
+            "email": "webmaster@hifikabin.me.uk",
+            "homepage": "http://phpbb.hifikabin.me.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "phpbb/phpbb": ">=3.2.0@dev",
+        "composer/installers": "~1.0.0"
+    },
+    "extra": {
+        "display-name": "Right Side Header Image",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.2.0@dev"
+        },
+        "version-check": {
+            "host": "www.phpbb.com",
+            "directory": "/customise/db/extension/right_header_image",
+            "filename": "version_check"
+        }
+    }
+}

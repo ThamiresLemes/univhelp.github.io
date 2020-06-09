@@ -1,0 +1,21 @@
+Subject: Notificação de resposta ao tópico - "{TOPIC_TITLE}"
+List-Unsubscribe: <{U_STOP_WATCHING_TOPIC}>
+
+Olá {USERNAME},
+
+Você recebeu este e-mail porque está visualizando o tópico "{TOPIC_TITLE}" em "{SITENAME}". Este tópico recebeu uma resposta<!-- IF AUTHOR_NAME != '' --> por {AUTHOR_NAME}<!-- ENDIF --> desde a sua última visita. Você pode usar o seguinte endereço para ler as respostas escritas. Não serão enviadas mais notificações enquanto você não visitar este tópico.
+
+Se você deseja visualizar a mensagem mais recente desde sua última visita, clique no seguinte link:
+{U_NEWEST_POST}
+
+Se você deseja visualizar o tópico, clique no seguinte link:
+{U_TOPIC}
+
+Se você deseja visualizar o fórum, clique no seguinte link:
+{U_FORUM}
+
+Se você deseja parar de visualizar este tópico, clique no link "Parar de visualizar este tópico" na parte inferior esquerda do tópico, ou clique no seguinte endereço:
+
+{U_STOP_WATCHING_TOPIC}
+
+{EMAIL_SIG}

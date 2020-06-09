@@ -1,0 +1,13 @@
+Subject: Reativação de registro
+
+Olá {USERNAME},
+
+O seu registro em "{SITENAME}" foi desativado, devido a alteração de informações importantes em seu perfil. Para reativar o seu registro, você deverá clicar no endereço abaixo:
+
+{U_ACTIVATE}
+
+
+{USERNAME}, obrigado pelo seu registo em "{SITENAME}".
+Participe ativamente. A sua colaboração é fundamental para todos nós.
+
+{EMAIL_SIG}

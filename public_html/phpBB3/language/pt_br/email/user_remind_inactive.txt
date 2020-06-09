@@ -1,0 +1,11 @@
+Subject: Lembrete de registro inativo
+
+Olá {USERNAME},
+
+Esta notificação é um lembrete de que sua conta em "{SITENAME}", criada em {REGISTER_DATE}, continua inativa. 
+Caso você deseje ativar o seu registro, por favor, visite o seguinte endereço:
+{U_ACTIVATE}
+
+Obrigado por registrar-se em "{SITENAME}", nós aguardamos a sua participação!
+
+{EMAIL_SIG}
